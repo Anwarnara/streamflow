@@ -1,18 +1,13 @@
 # UI/UX Design System
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
 ## 1. Design Philosophy
 - **Dark Theme Default**: Mengurangi eye strain untuk monitoring berjam-jam.
-- **No-Flicker Updates**: Update elemen UI secara parsial via `textContent` daripada membangun ulang DOM (menghindari layout shift).
+- **No-Flicker Updates**: Update parsial via `textContent` (contoh: SSE Chat dan Hardware Stats).
 
-## 2. Color Palette
-- **Background**: `bg-gray-900`
-- **Cards/Containers**: `bg-dark-700`, `bg-dark-800`
-- **Accents**: `text-primary` (brand color), `text-red-400` (destructive actions)
-
-## 3. Components
-- **3-Dot Menus**: Menggunakan absolute positioning `bottom-8 z-50` agar membuka ke atas dan tidak tertutup footer.
-- **Progress Bars**: Menggunakan CSS `transition-all duration-300` agar smooth.
-- **Icons**: Menggunakan Tabler Icons.
+## 2. Components
+- **3-Dot Menus**: Menggunakan absolute positioning `bottom-8 z-50` agar membuka ke atas.
+- **Chat Box**: Auto-scroll dengan animasi `.animate-fade-in` pada setiap chat baru yang masuk via SSE.
+- **Progress Bars**: CSS `transition-all duration-300`.
 

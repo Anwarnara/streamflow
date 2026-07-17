@@ -1,29 +1,30 @@
 # API Specification
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
-## 1. Authentication
-Semua endpoint (kecuali `/api/auth/login` dan `/api/auth/signup`) membutuhkan cookie `streamflow_session`.
+## 1. Live Streaming API (Baru v3.1.0)
 
-## 2. Core Endpoints
+### `POST /api/rtmp/auth`
+- Endpoint internal yang dipanggil oleh Nginx-RTMP.
+- **Request**: Form data `name={streamKey}`
+- **Response**: `200 OK` (Izinkan stream) atau `403 Forbidden`.
 
-### `POST /api/auth/login`
-- **Body**: `{"username": "...", "password": "..."}`
-- **Response**: `200 OK`, Sets HTTPOnly Cookie.
+### `GET /api/streams/:id/chat`
+- Endpoint SSE (Server-Sent Events) untuk real-time chat aggregator.
+- **Response**: Streaming payload text/event-stream.
 
-### `GET /api/videos`
-- **Response**: `200 OK`, `[{"id": "...", "title": "...", "thumbnail_path": "..."}]`
+### `PUT /api/streams/:id/config`
+- **Body**: `{"fallback_video_id": "...", "watermark_path": "..."}`
+- **Response**: `200 OK`
 
-### `PUT /api/videos/:id`
-- **Body**: `{"title": "New Title"}` (Partial update)
-- **Response**: `200 OK`, `{"message": "Video updated"}`
+### `POST /api/streams/:id/destinations`
+- **Body**: `{"platform": "youtube", "rtmp_url": "...", "stream_key": "..."}`
+
+## 2. Core API
 
 ### `GET /api/system/stats`
-- **Response**: `200 OK`, `{"cpu": 45.2, "memory_used": 1024, "disk_used": 50.5}`
-- **Note**: 900ms micro-cache di backend untuk mencegah race condition flicker.
+- Data hardware monitoring. Menggunakan 900ms micro-cache di backend.
 
-## 3. Chunked Upload Flow
-- `POST /api/videos/chunk/init` -> `uploadId`
-- `POST /api/videos/chunk/upload?uploadId=X&chunkIndex=N` (Binary body)
-- `POST /api/videos/chunk/complete?uploadId=X`
+### `PUT /api/videos/:id`
+- Endpoint update/rename video.
 

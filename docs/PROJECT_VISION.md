@@ -1,5 +1,5 @@
 # Project Vision & Strategy
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
 ## 1. Visi Jangka Panjang
@@ -7,16 +7,16 @@ StreamFlow bertujuan menjadi platform manajemen streaming end-to-end terdepan ba
 
 ## 2. Misi
 - Menyediakan antarmuka tunggal untuk mengontrol seluruh aset media dan stream destination.
-- Mengotomatisasi workflow operasional streaming (scheduling, rotation, analytics).
-- Memaksimalkan efisiensi hardware melalui arsitektur yang sangat dioptimalkan (Go + Echo).
+- Mengotomatisasi workflow operasional streaming (scheduling, rotation, analytics, simulcast).
+- Memaksimalkan efisiensi hardware melalui arsitektur yang sangat dioptimalkan (Go + FFmpeg).
 
 ## 3. Value Proposition
-- **Seamless Multi-Platform**: Streaming ke YouTube, Facebook, Twitch dari satu dashboard.
-- **Resource Efficiency**: Arsitektur Go yang ringan memungkinkan hosting di VPS murah tanpa mengorbankan kualitas stream.
-- **Unlimited Uploads**: Sistem chunked-upload mem-bypass batasan proxy (Cloudflare) untuk file berukuran besar.
+- **Enterprise Live Streaming**: RTMP Ingest dengan auto-failover dan dynamic watermarking.
+- **Seamless Multi-Platform**: Simulcast (restreaming) ke YouTube, Twitch dari satu dashboard dengan Zero-CPU copy overhead.
+- **Resource Efficiency**: Arsitektur Go yang ringan memungkinkan hosting di VPS murah.
+- **Unlimited Uploads**: Sistem chunked-upload mem-bypass batasan proxy (Cloudflare).
 
 ## 4. Success Metrics
 - 50+ Active users dalam 3 bulan pertama.
-- 99.9% Uptime sistem.
-- Rata-rata response time API di bawah 100ms.
+- 99.9% Uptime sistem (termasuk failover stream handling).
 - Zero downtime selama deployment (via systemd).

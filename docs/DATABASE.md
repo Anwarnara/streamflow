@@ -1,5 +1,5 @@
 # Database Architecture
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
 ## 1. Overview
@@ -9,28 +9,27 @@
 
 ## 2. Skema Tabel Utama
 
-### `users`
-- `id` (UUID, PK)
-- `username` (VARCHAR, Unique)
-- `password_hash` (VARCHAR)
-- `role` (VARCHAR: 'admin', 'member')
-
-### `videos`
-- `id` (UUID, PK)
-- `title` (VARCHAR)
-- `filepath` (VARCHAR)
-- `thumbnail_path` (VARCHAR, Nullable)
-- `user_id` (UUID, FK -> users.id)
-- `folder_id` (UUID, FK -> folders.id)
-
 ### `streams`
 - `id` (UUID, PK)
-- `name` (VARCHAR)
+- `stream_key` (VARCHAR, Unique)
+- `fallback_video_id` (UUID, Nullable, FK -> videos.id)
+- `watermark_path` (VARCHAR, Nullable)
+- `is_live` (BOOLEAN)
+
+### `stream_destinations` (Baru v3.1)
+- `id` (UUID, PK)
+- `stream_id` (UUID, FK -> streams.id)
 - `platform` (VARCHAR)
+- `rtmp_url` (VARCHAR)
 - `stream_key` (VARCHAR)
-- `user_id` (UUID, FK -> users.id)
+
+### `stream_chats` (Baru v3.1)
+- `id` (UUID, PK)
+- `stream_id` (UUID, FK)
+- `author_name` (VARCHAR)
+- `message` (TEXT)
+- `timestamp` (TIMESTAMP)
 
 ## 3. Migrations & Backup
-- Database berjalan di bare-metal VPS (bukan dockerized untuk fase ini).
 - Backup: Cron job harian pg_dump.
 

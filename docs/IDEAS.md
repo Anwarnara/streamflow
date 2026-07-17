@@ -1,10 +1,9 @@
 # Backlog & Ideas
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
 ## Fitur "Nice to Have"
-- **AI Thumbnail Picker**: Alih-alih frame di detik pertama, gunakan AI untuk memilih frame yang tidak blur.
-- **Audio Normalization**: Auto-normalize volume audio via FFmpeg saat proses upload.
-- **Dark/Light Mode Toggle**: Saat ini hanya dark mode, tambahkan support sistem tema.
-- **Drag & Drop Folder Reordering**: UI interaktif untuk menyusun struktur direktori.
+- **AI Chat Moderation**: Memblokir chat toxic secara real-time sebelum didorong ke UI SSE.
+- **Dynamic Bandwidth Shifting**: Otomatis menurunkan bitrate simulcast jika load server mulai berat.
+- **AI Thumbnail Picker**: Mencari frame optimal dari video VOD (VOD).
 

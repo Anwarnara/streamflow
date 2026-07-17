@@ -1,18 +1,10 @@
 # Error Handling & States
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
-## 1. Backend Errors
-API mengembalikan HTTP Status codes standar:
-- `400 Bad Request`: Input tidak valid (missing fields, format salah).
-- `401 Unauthorized`: Session tidak ada atau kadaluarsa.
-- `403 Forbidden`: Akses ditolak (bukan pemilik resource).
-- `500 Internal Server Error`: Kesalahan DB atau sistem file.
+## 1. RTMP Ingest Errors
+- `403 Forbidden` pada auth: Jika stream key OBS salah atau tidak terdaftar. Nginx otomatis memutus koneksi OBS.
 
-Format standar: `{"error": "Deskripsi pesan error"}`
-
-## 2. Frontend Error UI
-- **Toast Notifications**: Error sementara (Gagal rename, gagal delete).
-- **Fallback Icons**: Jika thumbnail gagal diload/generate, tampilkan ikon `<i class="ti ti-video">`.
-- **System Stats Zero-Flicker**: Backend menggunakan Mutex cache (900ms) agar API tidak merespons `0` saat data sedang dibaca.
+## 2. Simulcast Error Handling (Failover)
+- Jika proses FFmpeg simulcast terputus atau OBS mati, backend tidak membiarkan stream YouTube mati. Go akan men-trigger function `triggerFallback()` yang melooping video siaga (Stand By).
 

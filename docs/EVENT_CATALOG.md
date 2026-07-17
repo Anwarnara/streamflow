@@ -1,17 +1,13 @@
 # System Event Catalog
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
-## 1. Internal Events
-Saat ini StreamFlow menggunakan synchronous processing, namun event log dicatat untuk audit:
+## 1. Real-time Events
+- `SSE_CHAT_UPDATE`: Dikirim via `/api/streams/:id/chat` ketika ada webhook chat masuk.
+- `RTMP_PUBLISH`: Ter-trigger otomatis dari Nginx ke backend saat OBS connect.
+
+## 2. Internal Events
 - `USER_LOGIN_SUCCESS`
 - `VIDEO_UPLOAD_COMPLETED`
-- `STREAM_STARTED`
-- `STREAM_STOPPED`
 - `ROTATION_TRIGGERED`
-
-## 2. External Webhooks (Planned)
-Fase mendatang akan mendukung webhooks untuk integrasi Discord/Slack:
-- `ON_STREAM_START`
-- `ON_STREAM_ERROR`
 

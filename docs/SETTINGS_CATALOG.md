@@ -1,16 +1,13 @@
 # Application Settings
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
-## 1. Server Configuration (ENV)
+## 1. Server Configuration
 - `PORT`: 8100
-- `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
-- `SESSION_SECRET`: Kunci enkripsi cookie
-- `FFMPEG_PATH`: `/usr/local/bin/ffmpeg` (Wajib menunjuk ke AVX-512 build)
+- `DB_*`: Konfigurasi PostgreSQL
+- `FFMPEG_PATH`: `/usr/local/bin/ffmpeg` (Wajib AVX-512)
 
-## 2. User Settings (UI)
-- Account details (Username, Email)
-- Password management
-- Google Drive API Key
-- YouTube Channel Connection
+## 2. Nginx Configuration
+- Reverse Proxy: Port 7575
+- RTMP Server: Port 1935
 

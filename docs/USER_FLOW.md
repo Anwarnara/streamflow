@@ -1,21 +1,17 @@
 # User Journey Maps
-**Version:** 3.0.3  
+**Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
-## 1. Upload & Stream Flow
-1. Login ke Dashboard.
-2. Navigasi ke Gallery -> Upload Video.
-3. Klien memotong file > 50MB menjadi chunks dan mengirimkannya.
-4. Server menggabungkan chunks dan memanggil FFmpeg untuk auto-thumbnail.
-5. Navigasi ke Streams -> Create Stream.
-6. Pilih video yang baru diupload.
-7. Masukkan Stream Key YouTube.
-8. Klik Start.
+## 1. Live Streaming Flow (OBS)
+1. Buka halaman Live Control.
+2. Dapatkan RTMP URL (`rtmp://ip/live`) dan Stream Key dari UI.
+3. Masukkan ke OBS dan klik "Start Streaming".
+4. Nginx mengotentikasi Stream Key via `/api/rtmp/auth`.
+5. FFmpeg mem-broadcast simulcast secara transparan di background.
+6. Chat penonton mengalir secara otomatis ke UI via SSE.
 
-## 2. Video Management Flow
-1. Buka Gallery.
-2. Klik tombol 3-titik (3-dot menu) pada video.
-3. Pilih "Rename".
-4. Masukkan nama baru di prompt.
-5. Tampilan langsung terupdate (real-time).
+## 2. Video Upload & Chunking
+1. User upload file GB+.
+2. Klien memotong jadi chunks 50MB.
+3. Server menggabungkan dan memanggil FFmpeg untuk membuat thumbnail.
 
