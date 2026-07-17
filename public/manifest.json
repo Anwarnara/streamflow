@@ -1,0 +1,78 @@
+{
+  "name": "StreamFlow - Multi-Platform Live Streaming",
+  "short_name": "StreamFlow",
+  "description": "Multi-platform live streaming application with real-time monitoring and analytics",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#0055FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Start Stream",
+      "short_name": "Stream",
+      "description": "Quick start a new stream",
+      "url": "/dashboard?action=new-stream",
+      "icons": [{ "src": "/images/icon-stream.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Upload Video",
+      "short_name": "Upload",
+      "description": "Upload a new video",
+      "url": "/gallery?action=upload",
+      "icons": [{ "src": "/images/icon-upload.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Stream Analytics",
+      "short_name": "Analytics",
+      "description": "View stream analytics",
+      "url": "/analytics",
+      "icons": [{ "src": "/images/icon-analytics.png", "sizes": "96x96" }]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "video",
+          "accept": ["video/mp4", "video/avi", "video/quicktime"]
+        }
+      ]
+    }
+  }
+}
