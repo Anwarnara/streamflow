@@ -16,14 +16,14 @@
 - `watermark_path` (VARCHAR, Nullable)
 - `is_live` (BOOLEAN)
 
-### `stream_destinations` (Baru v3.1)
+### `stream_destinations`
 - `id` (UUID, PK)
 - `stream_id` (UUID, FK -> streams.id)
 - `platform` (VARCHAR)
 - `rtmp_url` (VARCHAR)
 - `stream_key` (VARCHAR)
 
-### `stream_chats` (Baru v3.1)
+### `stream_chats`
 - `id` (UUID, PK)
 - `stream_id` (UUID, FK)
 - `author_name` (VARCHAR)

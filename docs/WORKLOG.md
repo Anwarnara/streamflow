@@ -9,5 +9,8 @@
   2. Implementasi Simulcast Tee-muxer di backend Go.
   3. Membangun sistem Auto-Failover / Standby Video.
   4. Setup endpoint SSE untuk chat aggregator.
-- Push pembaruan dokumentasi.
+- Perbaikan dropdown Select Video:
+  1. Integrasi Z-index melayang (z-[9999]) dan relative context.
+  2. Perubahan render engine ke DOM createElement untuk mencegah crash nama video dengan tanda petik (').
+  3. Integrasi render thumbnail gambar dari database.
 

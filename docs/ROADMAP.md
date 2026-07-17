@@ -9,6 +9,7 @@
 - ✅ RTMP Ingest & Nginx Auth.
 - ✅ Simulcast Engine & Auto-Failover.
 - ✅ Unified Live Chat SSE.
+- ✅ Dropdown Video dengan Thumbnail & format size.
 
 ## Phase 3: Advanced Integrations (Planned v3.2.0)
 - ⏳ Integrasi YouTube/Twitch Webhooks langsung untuk Chat Aggregator.

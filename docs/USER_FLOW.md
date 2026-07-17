@@ -4,7 +4,7 @@
 
 ## 1. Live Streaming Flow (OBS)
 1. Buka halaman Live Control.
-2. Dapatkan RTMP URL (`rtmp://ip/live`) dan Stream Key dari UI.
+2. Dapatkan RTMP URL (`rtmp://ip/live`) and Stream Key dari UI.
 3. Masukkan ke OBS dan klik "Start Streaming".
 4. Nginx mengotentikasi Stream Key via `/api/rtmp/auth`.
 5. FFmpeg mem-broadcast simulcast secara transparan di background.

@@ -2,7 +2,7 @@
 **Version:** 3.1.0  
 **Last Updated:** 2026-07-17  
 
-## 1. Live Streaming API (Baru v3.1.0)
+## 1. Live Streaming API (v3.1.0)
 
 ### `POST /api/rtmp/auth`
 - Endpoint internal yang dipanggil oleh Nginx-RTMP.

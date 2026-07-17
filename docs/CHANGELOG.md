@@ -14,6 +14,6 @@
 - **Unified Live Chat**: SSE (Server-Sent Events) endpoint for real-time chat aggregation.
 - **Live Dashboard**: New UI for stream monitoring, RTMP key management, and chat.
 
-### Documentation
-- Restructured documentation into 20 standard files using `web-dokumen` spec.
+### Dropdown Fixes
+- Fixed "Select Video" dropdown to display correctly with real-time video lists, sizes, and thumbnails.
 

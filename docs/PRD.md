@@ -7,7 +7,7 @@ Content creator menghadapi kesulitan dalam mengelola stream secara manual ke ber
 
 ## 2. Solusi
 Dashboard terpusat yang menawarkan:
-- Enterprise Live Streaming (RTMP, Simulcast, Fallback).
+- Enterprise Live Streaming (RTMP Ingest, Simulcast, Fallback).
 - Real-time monitoring (CPU, RAM, Disk, Network).
 - Unlimited size chunked uploads.
 - Playlist dan stream rotation scheduler.
@@ -19,7 +19,7 @@ Dashboard terpusat yang menawarkan:
 
 ## 4. Fitur Inti (Core Features)
 - **Enterprise Live**: Nginx-RTMP ingest, Simulcast multi-destination, Auto-Failover (standby video), Unified Chat SSE.
-- **Media Management**: Upload, gallery, folders, thumbnail generation (FFmpeg), renaming.
+- **Media Management**: Upload, gallery, folders, thumbnail generation (FFmpeg), renaming, select video dropdown with thumbnail.
 - **Stream Control**: Start/Stop, stream keys, destination config.
 - **System Dashboard**: 1-second interval hardware monitoring.
 
